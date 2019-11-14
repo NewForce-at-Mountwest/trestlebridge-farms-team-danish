@@ -19,10 +19,13 @@ namespace Trestlebridge.Actions {
             {
                 case 1:
                     farm.AddGrazingField(new GrazingField());
+                    Console.WriteLine("You have created a new Facility");
                     break;
                 default:
                     break;
+
             }
+
         }
     }
 }
