@@ -6,7 +6,12 @@ using Trestlebridge.Models.Facilities;
 
 namespace Trestlebridge.Actions {
     public class PurchaseStock {
+
+
         public static void CollectInput (Farm farm) {
+
+            //farm refers to every grazing field
+
             Console.WriteLine ("1. Cow");
             Console.WriteLine ("2. Ostrich");
 
@@ -16,10 +21,21 @@ namespace Trestlebridge.Actions {
             Console.Write ("> ");
             string choice = Console.ReadLine ();
 
+            //set a string to the number typed in
+
             switch (Int32.Parse(choice))
+
+            // setting the choice to an integer
+
             {
                 case 1:
+
+                // if the user types in 1 run this
+
                     ChooseGrazingField.CollectInput(farm, new Cow());
+
+                    // from here the application knows you would like to purchase a cow and will then ask where to put it in ChooseGrazingField
+
                     break;
                 default:
                     break;
