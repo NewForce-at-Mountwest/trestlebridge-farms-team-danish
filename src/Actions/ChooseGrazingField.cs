@@ -11,7 +11,7 @@ namespace Trestlebridge.Actions
         public static void CollectInput(Farm farm, IGrazing animal)
         {
             Utils.Clear();
-
+            // Loop throughh created Facilities and list them by number
             for (int i = 0; i < farm.GrazingFields.Count; i++)
             {
                 Console.WriteLine($"{i + 1}. Grazing Field");
@@ -23,8 +23,9 @@ namespace Trestlebridge.Actions
             Console.WriteLine($"Place the animal where?");
 
             Console.Write("> ");
+            // User Inputted number
             int choice = Int32.Parse(Console.ReadLine());
-
+            // Using the Inputted Number in association with the Facility and adding animal
             farm.GrazingFields[choice].AddResource(animal);
 
             /*
