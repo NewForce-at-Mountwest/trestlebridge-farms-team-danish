@@ -24,7 +24,10 @@ namespace Trestlebridge.Actions {
                     break;
 
                 case 4:
+                Console.WriteLine("You have created a new Chicken House!");
+                Console.ReadLine();
                     farm.AddChickenHouse(new ChickenHouse());
+
                     break;
                 default:
                     break;
