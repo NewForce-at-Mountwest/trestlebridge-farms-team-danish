@@ -19,13 +19,24 @@ namespace Trestlebridge.Actions {
             switch (Int32.Parse(input))
             {
                 case 1:
+                Console.WriteLine("You have created a new Facility");
+                Console.ReadLine();
                     farm.AddGrazingField(new GrazingField());
-                    Console.WriteLine("You have created a new Facility");
+                    break;
+
+                     case 2:
+                Console.WriteLine("You have created a new Facility");
+                Console.ReadLine();
+                    farm.AddPlowingField(new PlowingField());
                     break;
                 default:
                     break;
 
+
+
+
             }
+
 
         }
     }
