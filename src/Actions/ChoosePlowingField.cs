@@ -2,32 +2,32 @@ using System;
 using System.Linq;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
-using Trestlebridge.Models.Animals;
+using Trestlebridge.Models.Facilities;
 
 namespace Trestlebridge.Actions
 {
-    public class ChooseGrazingField
+    public class ChoosePlowingField
     {
         // Collecting the added Grazing Fields
-        public static void CollectInput(Farm farm, IGrazing animal)
+        public static void CollectInput(Farm farm, ISeedProducing seed)
         {
             Utils.Clear();
             // Loop throughh created Facilities and list them by number
-            for (int i = 0; i < farm.GrazingFields.Count; i++)
+            for (int i = 0; i < farm.PlowingFields.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Grazing Field");
+                Console.WriteLine($"{i + 1}. Plowing Field");
             }
 
             Console.WriteLine();
 
             // How can I output the type of animal chosen here?
-            Console.WriteLine($"Place the animal where?");
+            Console.WriteLine($"Place the seed where?");
 
             Console.Write("> ");
             // User Inputted number
             int choice = Int32.Parse(Console.ReadLine());
             // Using the Inputted Number in association with the Facility and adding animal
-            farm.GrazingFields[choice].AddResource(animal);
+            farm.PlowingFields[choice].AddResource(seed);
 
             /*
                 Couldn't get this to work. Can you?

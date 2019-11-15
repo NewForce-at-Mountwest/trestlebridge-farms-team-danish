@@ -8,6 +8,7 @@ namespace Trestlebridge.Models
 {
     public class Farm
     {
+        public List<PlowingField> PlowingFields {get;} = new List<PlowingField>();
         public List<GrazingField> GrazingFields { get; } = new List<GrazingField>();
 
         /*
@@ -32,14 +33,21 @@ namespace Trestlebridge.Models
         {
             GrazingFields.Add(field);
         }
+          public void AddPlowingField (PlowingField field){
+            PlowingFields.Add(field);
+
+        }
 
         public override string ToString()
         {
             StringBuilder report = new StringBuilder();
 
             GrazingFields.ForEach(gf => report.Append(gf));
+            PlowingFields.ForEach(pf => report.Append(pf));
 
             return report.ToString();
         }
+
+
     }
 }
