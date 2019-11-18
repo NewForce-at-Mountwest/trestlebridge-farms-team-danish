@@ -26,8 +26,10 @@ namespace Trestlebridge.Actions
             // User Inputted number
             int choice = Int32.Parse(Console.ReadLine());
             // Using the Inputted Number in association with the Facility and adding animal
-            farm.ChickenHouses[choice].AddResource(animal);
 
+            farm.ChickenHouses[choice-1].AddResource(animal);
+
+        //   Console.WriteLine(farm.ChickenHouses[choice]);
             /*
                 Couldn't get this to work. Can you?
                 Stretch goal. Only if the app is fully functional.

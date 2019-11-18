@@ -42,7 +42,7 @@ namespace Trestlebridge.Actions
                 case 5:
 
                     Console.WriteLine();
-                    Console.WriteLine("You have created a new Plowing Field");
+                    Console.WriteLine("You have created a new Duck House");
                     Console.WriteLine("Press Return to Exit");
                     Console.ReadLine();
                     farm.AddDuckHouse(new DuckHouse());

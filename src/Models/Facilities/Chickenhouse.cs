@@ -20,13 +20,18 @@ namespace Trestlebridge.Models.Facilities {
         // double FeedPerDay { get;}= 0.9;
         public void AddResource (IGrazing animal)
         {
+            if(this.Capacity > this._animals.Count){
            _animals.Add(animal);
+            }
+            else{
+                Console.WriteLine("Your chicken has been added to chicken house");
+                Console.WriteLine ("Press Enter to return to main menu");
+            }
         }
 
         public void AddResource (List<IGrazing> animals)
         {
-
-            _animals.AddRange(animals);
+animals.ForEach(animals=>_animals.Add(animals));
         }
 
         public override string ToString()
