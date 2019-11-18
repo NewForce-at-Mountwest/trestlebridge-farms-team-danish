@@ -8,7 +8,7 @@ namespace Trestlebridge.Actions
 {
     public class ChooseDuckHouse
     {
-        public static void CollectInput(Farm farm, IDHouse animal)
+        public static void CollectInput(Farm farm, Duck animal)
         {
             Utils.Clear();
             // Loop throughh created Facilities and list them by number
@@ -34,11 +34,6 @@ namespace Trestlebridge.Actions
              */
             // farm.PurchaseResource<IGrazing>(animal, choice);
 
-        }
-
-        internal static void CollectInput(Farm farm, Duck duck)
-        {
-            throw new NotImplementedException();
         }
     }
 }

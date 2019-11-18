@@ -5,12 +5,12 @@ using Trestlebridge.Interfaces;
 
 
 namespace Trestlebridge.Models.Facilities {
-    public class DuckHouse : IFacility<IDHouse>
+    public class DuckHouse : IFacility<IGrazing>
     {
         private int _capacity = 50;
         private Guid _id = Guid.NewGuid();
 
-        private List<IDHouse> _animals = new List<IDHouse>();
+        private List<IGrazing> _animals = new List<IGrazing>();
 
         public double Capacity {
             get {
@@ -18,15 +18,24 @@ namespace Trestlebridge.Models.Facilities {
             }
         }
 
-        public void AddResource (IDHouse animal)
+        public void AddResource (IGrazing animal)
         {
-            // TODO: implement this...
-            throw new NotImplementedException();
+             if(this.Capacity > this._animals.Count){
+           _animals.Add(animal);
+            }
+            else{
+                Console.WriteLine("Your Duck has been added to Duck house");
+                Console.WriteLine ("Press Enter to return to main menu");
+            }
         }
 
-        public void AddResource (List<IDHouse> animals)
+        public void AddResource (List<IGrazing> animals)
         {
-            // TODO: implement this...
+          animals.ForEach(animals=>_animals.Add(animals));
+        }
+
+        internal void AddResource(IDHouse animal)
+        {
             throw new NotImplementedException();
         }
 
@@ -35,15 +44,11 @@ namespace Trestlebridge.Models.Facilities {
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
 
-            output.Append($"Duck House {shortId} has {this._animals.Count} animals\n");
+            output.Append($"Duck House {shortId} has {this._animals.Count} Ducks\n");
             this._animals.ForEach(a => output.Append($"   {a}\n"));
 
             return output.ToString();
         }
 
-        internal void AddResource(IGrazing resource)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
