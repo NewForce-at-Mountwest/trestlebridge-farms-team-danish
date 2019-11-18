@@ -11,6 +11,15 @@ namespace Trestlebridge.Actions
         public static void CollectInput(Farm farm, IGrazing animal)
         {
             Utils.Clear();
+            Console.WriteLine();
+            Console.WriteLine(@"
+        +-++-++-++-++-++-++-++-++-++-++-++-++-+
+        |T||r||e||s||t||l||e||b||r||i||d||g||e|
+        +-++-++-++-++-++-++-++-++-++-++-++-++-+
+                    |F||a||r||m||s|
+                    +-++-++-++-++-+");
+            Console.WriteLine();
+
             // Loop throughh created Facilities and list them by number
             for (int i = 0; i < farm.ChickenHouses.Count; i++)
             {
@@ -27,9 +36,9 @@ namespace Trestlebridge.Actions
             int choice = Int32.Parse(Console.ReadLine());
             // Using the Inputted Number in association with the Facility and adding animal
 
-            farm.ChickenHouses[choice-1].AddResource(animal);
+            farm.ChickenHouses[choice - 1].AddResource(animal);
 
-        //   Console.WriteLine(farm.ChickenHouses[choice]);
+            //   Console.WriteLine(farm.ChickenHouses[choice]);
             /*
                 Couldn't get this to work. Can you?
                 Stretch goal. Only if the app is fully functional.

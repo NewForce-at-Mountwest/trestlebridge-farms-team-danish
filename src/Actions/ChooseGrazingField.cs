@@ -13,6 +13,15 @@ namespace Trestlebridge.Actions
         {
 
             Utils.Clear();
+            Console.WriteLine();
+            Console.WriteLine(@"
+        +-++-++-++-++-++-++-++-++-++-++-++-++-+
+        |T||r||e||s||t||l||e||b||r||i||d||g||e|
+        +-++-++-++-++-++-++-++-++-++-++-++-++-+
+                    |F||a||r||m||s|
+                    +-++-++-++-++-+");
+            Console.WriteLine();
+
             // Loop throughh created Facilities and list them by number
             for (int i = 0; i < farm.GrazingFields.Count; i++)
             {
@@ -28,7 +37,21 @@ namespace Trestlebridge.Actions
             // User Inputted number
             int choice = Int32.Parse(Console.ReadLine());
             // Using the Inputted Number in association with the Facility and adding animal
-            farm.GrazingFields[choice].AddResource(animal);
+            if (choice > 0 && choice < 21)
+            {
+                farm.GrazingFields[choice - 1].AddResource(animal);
+            }
+            // else if (choice == "")
+            // {
+            //     Console.WriteLine();
+            //     Console.WriteLine("Returning to Menu...");
+            // }
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine("Value not recognized, press return to exit.");
+                Console.ReadLine();
+            }
 
             /*
                 Couldn't get this to work. Can you?
