@@ -27,7 +27,7 @@ namespace Trestlebridge.Actions
             // User Inputted number
             int choice = Int32.Parse(Console.ReadLine());
             // Using the Inputted Number in association with the Facility and adding animal
-            farm.PlowingFields[choice].AddResource(seed);
+            farm.PlowingFields[choice-1].AddResource(seed);
 
             /*
                 Couldn't get this to work. Can you?

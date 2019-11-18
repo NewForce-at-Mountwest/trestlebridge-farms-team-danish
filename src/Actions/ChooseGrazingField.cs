@@ -11,6 +11,7 @@ namespace Trestlebridge.Actions
         // Collecting the added Grazing Fields
         public static void CollectInput(Farm farm, IGrazing animal)
         {
+
             Utils.Clear();
             // Loop throughh created Facilities and list them by number
             for (int i = 0; i < farm.GrazingFields.Count; i++)
