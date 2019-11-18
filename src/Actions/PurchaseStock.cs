@@ -20,7 +20,8 @@ namespace Trestlebridge.Actions
             Console.WriteLine("3. Goat");
             Console.WriteLine("4. Ostrich");
             Console.WriteLine("5. Sheep");
-
+            Console.WriteLine("6. Chicken");
+            Console.WriteLine("7. Duck");
             Console.WriteLine();
             Console.WriteLine("What are you buying today?");
 
@@ -36,51 +37,41 @@ namespace Trestlebridge.Actions
             {
                 case 1:
 
-                    // if the user types in 1 run this
-
                     ChooseGrazingField.CollectInput(farm, new Cow());
-
-                    // from here the application knows you would like to purchase a cow and will then ask where to put it in ChooseGrazingField
 
                     break;
 
                 case 2:
 
-                    // if the user types in 1 run this
-
                     ChooseGrazingField.CollectInput(farm, new Pig());
-
-                    // from here the application knows you would like to purchase a cow and will then ask where to put it in ChooseGrazingField
 
                     break;
 
                 case 3:
 
-                    // if the user types in 1 run this
-
                     ChooseGrazingField.CollectInput(farm, new Goat());
-
-                    // from here the application knows you would like to purchase a cow and will then ask where to put it in ChooseGrazingField
 
                     break;
                 case 4:
 
-                    // if the user types in 1 run this
-
                     ChooseGrazingField.CollectInput(farm, new Ostrich());
 
-                    // from here the application knows you would like to purchase a cow and will then ask where to put it in ChooseGrazingField
+
 
                     break;
+
                 case 5:
 
-                    // if the user types in 1 run this
-
                     ChooseGrazingField.CollectInput(farm, new Sheep());
-
-                    // from here the application knows you would like to purchase a cow and will then ask where to put it in ChooseGrazingField
-
                     break;
+                case 6:
+                    ChooseChickenHouse.CollectInput(farm, new Chicken());
+                    break;
+
+                case 7:
+                    ChooseDuckHouse.CollectInput(farm, new Duck());
+                    break;
+
                 default:
                     break;
             }
