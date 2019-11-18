@@ -37,9 +37,17 @@ namespace Trestlebridge.Actions
             // User Inputted number
             int choice = Int32.Parse(Console.ReadLine());
             // Using the Inputted Number in association with the Facility and adding animal
-            if(choice > 0 && choice < 21){
-                farm.GrazingFields[choice-1].AddResource(animal);
-            } else {
+            if (choice > 0 && choice < 21)
+            {
+                farm.GrazingFields[choice - 1].AddResource(animal);
+            }
+            // else if (choice == "")
+            // {
+            //     Console.WriteLine();
+            //     Console.WriteLine("Returning to Menu...");
+            // }
+            else
+            {
                 Console.WriteLine();
                 Console.WriteLine("Value not recognized, press return to exit.");
                 Console.ReadLine();
