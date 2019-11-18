@@ -8,7 +8,7 @@ namespace Trestlebridge.Actions
 {
     public class ChooseDuckHouse
     {
-        public static void CollectInput(Farm farm, IDHouse animal)
+        public static void CollectInput(Farm farm, Duck animal)
         {
             Utils.Clear();
             // Loop throughh created Facilities and list them by number
@@ -26,7 +26,7 @@ namespace Trestlebridge.Actions
             // User Inputted number
             int choice = Int32.Parse(Console.ReadLine());
             // Using the Inputted Number in association with the Facility and adding animal
-            farm.DuckHouses[choice].AddResource(animal);
+            farm.DuckHouses[choice-1].AddResource(animal);
 
             /*
                 Couldn't get this to work. Can you?
