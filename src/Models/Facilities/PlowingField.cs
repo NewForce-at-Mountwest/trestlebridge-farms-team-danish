@@ -7,21 +7,34 @@ namespace Trestlebridge.Models.Facilities{
 
     public class PlowingField : IFacility<ISeedProducing>
     {
+        private int _capacity = 50;
 
         // public double Harvest();
-        public double Capacity => throw new NotImplementedException();
+            public double Capacity  {
+            get {
+                return _capacity;
+            }
+            }
 
         private Guid _id =  Guid.NewGuid();
         private List<ISeedProducing> _seeds = new List<ISeedProducing>();
 
         public void AddResource(ISeedProducing resource)
         {
+              if(this.Capacity > this._seeds.Count)
+        {
             _seeds.Add(resource);
+        }
+        else{
+            Console.WriteLine("The seed has been Added to the Plowed Field");
+            Console.WriteLine("Press Enter to Return to the Menu");
+        }
         }
 
         public void AddResource(List<ISeedProducing> resources)
         {
-            _seeds.AddRange(resources);
+             resources.ForEach(resource => _seeds.Add(resource));
+           Console.WriteLine("The seeds have been Added to the Plowing Field");
         }
 
         public override string ToString()

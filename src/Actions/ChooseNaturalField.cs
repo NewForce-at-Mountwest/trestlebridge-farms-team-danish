@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Collections.Generic;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
 using Trestlebridge.Models.Facilities;
@@ -9,6 +10,10 @@ namespace Trestlebridge.Actions
     public class ChooseNaturalField
     {
         // Collecting the added Grazing Fields
+
+
+             public List<NaturalField> NaturalFields = new List<NaturalField>();
+
         public static void CollectInput(Farm farm, ISeedProducing seed)
         {
             Utils.Clear();
@@ -27,7 +32,7 @@ namespace Trestlebridge.Actions
             // User Inputted number
             int choice = Int32.Parse(Console.ReadLine());
             // Using the Inputted Number in association with the Facility and adding animal
-            farm.NaturalFields[choice].AddResource(seed);
+            farm.NaturalFields[choice-1].AddResource(seed);
 
             /*
                 Couldn't get this to work. Can you?
