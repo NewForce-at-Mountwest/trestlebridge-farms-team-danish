@@ -20,7 +20,7 @@ namespace Trestlebridge.Actions
             // Loop throughh created Facilities and list them by number
             for (int i = 0; i < farm.NaturalFields.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Natural Field {NaturalField._seeds.Count}");
+                Console.WriteLine($"{i + 1}. Natural Field ");
             }
 
             Console.WriteLine();
@@ -31,9 +31,8 @@ namespace Trestlebridge.Actions
             Console.Write("> ");
             // User Inputted number
             int choice = Int32.Parse(Console.ReadLine());
-            // Using the Inputted Number in association with the Facility and adding animal
+            // Using the Inputted Number in association with the Facility and adding seed
             farm.NaturalFields[choice-1].AddResource(seed);
-
             /*
                 Couldn't get this to work. Can you?
                 Stretch goal. Only if the app is fully functional.
