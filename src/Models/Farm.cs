@@ -36,6 +36,7 @@ namespace Trestlebridge.Models
                     break;
                 case "Sunflower":
                     PlowingFields[index].AddResource((ISeedProducing)resource);
+                    NaturalFields[index].AddResource((ISeedProducing)resource);
                     break;
                     case "Chicken":
                     ChickenHouses[index].AddResource((IGrazing)resource);

@@ -2,6 +2,7 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using Trestlebridge.Interfaces;
+using System.Linq;
 
 namespace Trestlebridge.Models.Facilities{
 
@@ -17,7 +18,7 @@ namespace Trestlebridge.Models.Facilities{
         }
 
         private Guid _id =  Guid.NewGuid();
-        public static List<ISeedProducing> _seeds = new List<ISeedProducing>();
+        public  List<ISeedProducing> _seeds = new List<ISeedProducing>();
 
         public void AddResource(ISeedProducing resource){
 
@@ -34,7 +35,7 @@ namespace Trestlebridge.Models.Facilities{
 
         public void AddResource(List<ISeedProducing> resources)
         {
-           resources.ForEach(resource => _seeds.Add(resource));
+          _seeds.AddRange(resources);
            Console.WriteLine("The seeds have been Added to the Natural Field");
         }
 
@@ -43,7 +44,7 @@ namespace Trestlebridge.Models.Facilities{
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
 
-            output.Append($"Natural field {shortId} has {_seeds.Count} seeds\n");
+            output.Append($"Natural field {shortId} has {this._seeds.Count} seeds\n");
             _seeds.ForEach(a => output.Append($"   {a}\n"));
 
             return output.ToString();
