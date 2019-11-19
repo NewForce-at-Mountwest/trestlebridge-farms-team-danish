@@ -17,11 +17,11 @@ namespace Trestlebridge.Models.Facilities{
         }
 
         private Guid _id =  Guid.NewGuid();
-        private List<ISeedProducing> _seeds = new List<ISeedProducing>();
+        public static List<ISeedProducing> _seeds = new List<ISeedProducing>();
 
         public void AddResource(ISeedProducing resource){
 
-            if(this.Capacity > this._seeds.Count)
+            if(this.Capacity > _seeds.Count)
         {
             _seeds.Add(resource);
         }
@@ -43,8 +43,8 @@ namespace Trestlebridge.Models.Facilities{
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
 
-            output.Append($"Natural field {shortId} has {this._seeds.Count} seeds\n");
-            this._seeds.ForEach(a => output.Append($"   {a}\n"));
+            output.Append($"Natural field {shortId} has {_seeds.Count} seeds\n");
+            _seeds.ForEach(a => output.Append($"   {a}\n"));
 
             return output.ToString();
         }

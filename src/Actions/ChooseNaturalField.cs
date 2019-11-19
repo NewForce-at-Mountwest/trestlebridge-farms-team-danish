@@ -20,7 +20,7 @@ namespace Trestlebridge.Actions
             // Loop throughh created Facilities and list them by number
             for (int i = 0; i < farm.NaturalFields.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Natural Field");
+                Console.WriteLine($"{i + 1}. Natural Field {NaturalField._seeds.Count}");
             }
 
             Console.WriteLine();

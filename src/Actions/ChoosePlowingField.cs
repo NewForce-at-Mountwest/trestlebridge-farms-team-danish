@@ -15,7 +15,7 @@ namespace Trestlebridge.Actions
             // Loop throughh created Facilities and list them by number
             for (int i = 0; i < farm.PlowingFields.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Plowing Field");
+                Console.WriteLine($"{i + 1}. Plowing Field {PlowingField._seeds.Count}");
             }
 
             Console.WriteLine();
